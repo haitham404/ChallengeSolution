@@ -43,7 +43,8 @@ src/main/java/org/example/
 │   └── NotFoundException.java
 └── Main.java
 ```
-
+## UML
+<img width="1898" height="1359" alt="Image" src="https://github.com/user-attachments/assets/f2809af4-8da4-4a72-a506-df8c285fa68d" />
 
 ## Usage Example
 ```
