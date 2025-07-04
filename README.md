@@ -96,7 +96,6 @@ total price               139.0
 - Add new exceptions in the `exception` package.
 
 ## Video Demo
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G_gtaHwssLY" frameborder="0" allowfullscreen></iframe>
-
+<!-- Uploading "challenge.mp4"... -->
 
 
