@@ -1,4 +1,4 @@
-# Fawry Rise Journey - E-commerce System
+# Challenge- E-commerce System
 
 ## Overview
 This project is a Java-based e-commerce system designed for the Fawry Rise Journey Full Stack Development Internship Challenge. It demonstrates core backend concepts such as product management, cart operations, checkout, shipping, and robust error handling using custom exceptions.
@@ -45,16 +45,6 @@ src/main/java/org/example/
 └── Main.java
 ```
 
-## How to Build & Run
-1. **Requirements**: Java 21+, Maven
-2. **Build**:
-   ```sh
-   mvn clean compile
-   ```
-3. **Run**:
-   ```sh
-   mvn exec:java -Dexec.mainClass="org.example.Main"
-   ```
 
 ## Usage Example
 ```
@@ -106,7 +96,7 @@ total price               139.0
 - Add new exceptions in the `exception` package.
 
 ## Video Demo
-A video walkthrough will be provided to demonstrate all features and edge cases.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G_gtaHwssLY" frameborder="0" allowfullscreen></iframe>
 
----
-**Author:** Fawry Rise Journey Internship Candidate
+
+
