@@ -96,6 +96,6 @@ total price               139.0
 - Add new exceptions in the `exception` package.
 
 ## Video Demo
-<!-- Uploading "challenge.mp4"... -->
+https://github.com/user-attachments/assets/131593ed-2fd4-4c2b-910a-d0b00ab578d2
 
 
