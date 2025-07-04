@@ -1,7 +1,6 @@
 # Challenge- E-commerce System
 
-## Overview
-This project is a Java-based e-commerce system designed for the Fawry Rise Journey Full Stack Development Internship Challenge. It demonstrates core backend concepts such as product management, cart operations, checkout, shipping, and robust error handling using custom exceptions.
+
 
 ## Features
 - **Product Management**: Define products with name, price, and quantity.
