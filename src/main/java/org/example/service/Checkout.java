@@ -1,11 +1,17 @@
-package org.example;
+package org.example.service;
 
+import org.example.model.Customer;
+import org.example.model.Cart;
+import org.example.model.Shippale;
+import org.example.model.Pair;
+import org.example.model.Product;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.example.exception.InsufficientFundsException;
 
 public class Checkout {
-    public Checkout(Customer customer, Cart cart) throws Exception {
+    public Checkout(Customer customer, Cart cart) throws InsufficientFundsException, Exception {
       Double subtotal= ShipmentNotice();
       Double weightShipping= checkouReceipt()*Shippale.pricePerGram;
 
@@ -15,7 +21,7 @@ public class Checkout {
         System.out.println("total price"+"               "+totalPrice);
 
 
-        if(customer.getBalance()<totalPrice) throw new Exception();
+        if(customer.getBalance()<totalPrice) throw new InsufficientFundsException("Insufficient balance");
 
 
     }

@@ -4,6 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.example.exception.NotFoundException;
+import org.example.model.Cart;
+import org.example.model.Customer;
+import org.example.service.Checkout;
+import org.example.service.ShippingService;
+import org.example.model.ProductRepository;
+import org.example.exception.ExpiredProductException;
+import org.example.exception.OutOfStockException;
+import org.example.exception.InsufficientFundsException;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -15,8 +25,8 @@ public class Main {
         Double balance = input2.nextDouble();
         Customer customer = new Customer(balance);
 
-        new Backend(); 
-        List<String> OurProducts = Backend.listProducts();
+        new ProductRepository(); 
+        List<String> OurProducts = ProductRepository.listProducts();
         System.out.println("Our products:");
         for(String product : OurProducts){
             System.out.print(product+"  ");
@@ -35,6 +45,8 @@ public class Main {
             sc.nextLine(); 
             try {
                cart.add(nameOfProduct,quantity);
+            } catch (ExpiredProductException | OutOfStockException |NotFoundException e) {
+                System.out.println(e.getMessage());
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -44,9 +56,10 @@ public class Main {
         try {
             new ShippingService(Cart.getShippale_list(), Cart.getProductsInCart());
             new Checkout(customer,cart);
+        } catch (InsufficientFundsException e) {
+            System.out.println(e.getMessage());
         } catch (Exception e) {
-            System.out.println("Transaction failed: Insufficient balance. Please add more funds.");
-
+            throw new RuntimeException(e);
         }
 
 

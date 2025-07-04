@@ -1,9 +1,12 @@
-package org.example;
+package org.example.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.example.exception.ExpiredProductException;
+import org.example.exception.NotFoundException;
+import org.example.exception.OutOfStockException;
 
 public class Cart {
     private static List<Pair> listMyProduct_Price = new ArrayList<>();
@@ -12,8 +15,8 @@ public class Cart {
 
 
 
-  public void add(String name, int quantity) throws Exception {
-      Map<Product,Integer> allProductsInTheStore = Backend.getMap();
+  public void add(String name, int quantity) throws ExpiredProductException, OutOfStockException, Exception {
+      Map<Product,Integer> allProductsInTheStore = ProductRepository.getMap();
 
 
       boolean flag = false;
@@ -23,9 +26,9 @@ public class Cart {
               flag=true;
 
               if(product instanceof ExpiredProduct){
-                  if(product.isExpired()) throw new Exception("Product is Expired");
+                  if(product.isExpired()) throw new ExpiredProductException("Product is Expired");
               }
-              if(allProductsInTheStore.get(product)<quantity) throw new Exception("Product Quantity Exceeded");
+              if(allProductsInTheStore.get(product)<quantity) throw new OutOfStockException("Product Quantity Exceeded");
 
               int newQuantityInAllMap = allProductsInTheStore.get(product)-quantity;
 
@@ -42,7 +45,7 @@ public class Cart {
           }
           
       }
-      if(!flag) throw new Exception("Product Not Exist");
+      if(!flag) throw new NotFoundException("Product Not Exist");
 
 
 

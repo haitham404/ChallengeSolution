@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -6,12 +6,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Backend {
+public class ProductRepository {
      private static Map<Product,Integer> map = new HashMap<>();
-    public Backend(){
-        LocalDate expireCheese = LocalDate.of(2025,12,1);
+    public ProductRepository(){
+//        LocalDate expireCheese = LocalDate.of(2025,12,1);
+//        Product cheese =new ExpirableShippableProduct("cheese",30.0,expireCheese,20.0);
+//        map.put(cheese,10);
+        LocalDate expireCheese = LocalDate.of(2023,12,1);
         Product cheese =new ExpirableShippableProduct("cheese",30.0,expireCheese,20.0);
         map.put(cheese,10);
+
 
 
         LocalDate expireBiscuits = LocalDate.of(2025,12,1);
@@ -33,7 +37,7 @@ public class Backend {
     }
     public static List<String> listProducts(){
         List<String> list = new ArrayList<>();
-        Map<Product,Integer> map = Backend.getMap();
+        Map<Product,Integer> map = ProductRepository.getMap();
         for(Product product:map.keySet()){
             list.add(product.getName());
         }

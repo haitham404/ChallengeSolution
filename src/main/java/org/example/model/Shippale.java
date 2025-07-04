@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 public interface Shippale {
     Double pricePerGram=0.03;

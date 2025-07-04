@@ -1,8 +1,11 @@
-package org.example;
+package org.example.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import org.example.model.Pair;
+import org.example.model.Shippale;
+import org.example.model.Product;
 
 public class ShippingService {
 
